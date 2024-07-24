@@ -16,10 +16,8 @@
     <link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/>
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b439285fe3079252be5db38521b9331b"></script>
-<!--    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=h8mce8c84o&submodules=geocoder"-->
-<!--            type="text/javascript"></script>-->
-
+    <!-- services 라이브러리 불러오기 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b439285fe3079252be5db38521b9331b&libraries=services"></script>
     <style>
         @font-face {
             font-family: 'GmarketSansLight';
@@ -345,6 +343,9 @@
         };
 
         var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        var places = new kakao.maps.services.Places();
+        places.setMap(map);
+        places.keywordSearch('용산가족공원 야외예식장');
         //
         // // 37.45577395827255, 127.0711253661524
         // var mapOptions = {
