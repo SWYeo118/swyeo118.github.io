@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="yes" name="apple-mobile-web-app-capable"/>
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta content="yes" name="mobile-web-app-capable">
 
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport"/>
     <meta content="Yeah + Sang" property="og:title"/>
@@ -17,7 +17,13 @@
     <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <!-- services 라이브러리 불러오기 -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b439285fe3079252be5db38521b9331b&libraries=services"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b439285fe3079252be5db38521b9331b&libraries=services"
+            type="text/javascript"></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
+            integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+    <script>
+        Kakao.init('b439285fe3079252be5db38521b9331b'); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
     <style>
         @font-face {
             font-family: 'GmarketSansLight';
@@ -155,7 +161,7 @@
                  style="border-width: 0.05rem; width: 280px; height: 70px; border-color: black">
                     <span style="padding-top:13px; font-family: GmarketSansLight,serif; font-size: 14px;">
 <!--                        박준환 <span class="color-key">+</span> 김유순 의 <span class="color-key">아들</span> 우현<br>-->
-<!--                        남강진 <span class="color-key">+</span> 안영식 의 <span class="color-key">&nbsp;&nbsp;&nbsp;딸</span> 민희<br>-->
+                        <!--                        남강진 <span class="color-key">+</span> 안영식 의 <span class="color-key">&nbsp;&nbsp;&nbsp;딸</span> 민희<br>-->
                     </span>
             </div>
         </div>
@@ -190,10 +196,10 @@
              style="background: linear-gradient(180deg, rgba(248,247,241,1) 16%, rgba(130,214,127,1) 62%, rgba(34,196,55,1) 100%);">
             <p style="font-size: 30px">😷</p>
             <div class="tracking-tighter" style="font-size: 15px">
-<!--                <p class="mb-5" style="font-family: GmarketSansLight">-->
-<!--                    COVID-19로 인해 모두가 어려운 시기임에도<br>-->
-<!--                    예정대로 결혼식을 진행하게 되었습니다.-->
-<!--                </p>-->
+                <!--                <p class="mb-5" style="font-family: GmarketSansLight">-->
+                <!--                    COVID-19로 인해 모두가 어려운 시기임에도<br>-->
+                <!--                    예정대로 결혼식을 진행하게 되었습니다.-->
+                <!--                </p>-->
                 <p class="mb-5" style="font-family: GmarketSansLight">
                     정부의 방역지침을 최대한 준수하여<br>
                     예식이 진행될 예정이지만,
@@ -271,11 +277,12 @@
 
         <div class="px-8 mt-8 text-left tracking-tighter">
             <div class="italic underline underline-offset-2 mb-2" style="font-family: GmarketSansMedium">오시는 길</div>
-            <a href="https://m.site.naver.com/1r7oV" style="font-family: GmarketSansLight" target="_blank">서울 용산구 용산동6가 93-6
+            <a href="https://m.site.naver.com/1r7oV" style="font-family: GmarketSansLight" target="_blank">서울 용산구 용산동6가
+                93-6
                 <span style="font-family: GmarketSansMedium">용산가족공원 야외예식장</span></a>
 
             <div id="map" style="width:100%; height:300px;"></div>
-<!--            <div class="my-4" id="map" style="width: 100%; height: 300px"></div>-->
+            <!--            <div class="my-4" id="map" style="width: 100%; height: 300px"></div>-->
 
             <div class="italic mb-6" style="font-family: GmarketSansLight;">
                 <div class="flex justify-evenly mt-2">
@@ -288,28 +295,26 @@
                     <a href="tmap://search?name=국립중앙박물관 주차장" style="width: 40px">
                         <img src="./images/tmap.png">
                     </a>
-                    <a href="https://t.kakao.com/launch?type=taxi&amp;dest_lat=37.4557739582&amp;dest_lng=127.071125&amp;ref=localweb"
-                       style="width: 40px">
-                        <img src="./images/kakaotaxi.png">
+                    <a id="start-navigation" href="javascript:startNavigation()">
+                        <img src="./images/kakaonavi.png">
                     </a>
                 </div>
             </div>
 
-            <div class="mb-1" style="font-family: GmarketSansMedium; font-size: 13px">🚌 셔틀버스</div>
-            <div class="mb-6" style="font-family: GmarketSansLight;">
-                양재시민의숲역 4번출구에서 15분 간격
-            </div>
+<!--            <div class="mb-1" style="font-family: GmarketSansMedium; font-size: 13px">🚌 셔틀버스</div>-->
+<!--            <div class="mb-6" style="font-family: GmarketSansLight;">-->
+<!--                양재시민의숲역 4번출구에서 15분 간격-->
+<!--            </div>-->
 
             <div class="mb-1" style="font-family: GmarketSansMedium; font-size: 13px">🚗 자가용</div>
             <div class="mb-6" style="font-family: GmarketSansLight;">
-                주차장 주소 <span class="underline underline-offset-2">서울시 서초구 샘마루길 34-14</span><br>
-                네비게이션 <span class="underline underline-offset-2">강동 송파 예비군훈련장</span> 입력
+                주차장 주소 <span class="underline underline-offset-2">서울 용산구 서빙고로 137</span><br>
+                네비게이션 <span class="underline underline-offset-2">국립중앙박물관 주차장</span> 입력
             </div>
 
             <div class="mb-1" style="font-family: GmarketSansMedium; font-size: 13px">🚈 대중교통</div>
             <div class="mb-1" style="font-family: GmarketSansLight;">
-                양재시민의숲역 4번출구 <span style="font-size: 10px">혹은</span><br> 양재역 9번출구<span
-                    style="font-size: 10px">에서 버스 이용</span>
+                4호선 이촌역 2번출구에서 <span style="font-size: 10px">국립중앙박물관 방향</span><br> 도보 10분거리
             </div>
 
             <div class="mb-6 " style="font-family: GmarketSansLight;">
@@ -336,27 +341,36 @@
                 clickable: true,
             },
         });
+        function startNavigation() {
+            Kakao.Navi.start({
+                name: '용산가족공원 야외예식장',
+                x: 126.9804702,
+                y: 37.5238506,
+                coordType: 'wgs84',
+            });
+        }
+
         let container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
         let options = { //지도를 생성할 때 필요한 기본 옵션
             center: new kakao.maps.LatLng(37.521138, 126.983937), //지도의 중심좌표.
             level: 3 //지도의 레벨(확대, 축소 정도)
         };
 
-        var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-        var places = new kakao.maps.services.Places();
+        let infowindow = new kakao.maps.InfoWindow({zIndex: 1});
+        let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        let places = new kakao.maps.services.Places();
         places.setMap(map);
         places.keywordSearch('용산가족공원 야외예식장', placesSearchCB);
 
         // 키워드 검색 완료 시 호출되는 콜백함수 입니다
-        function placesSearchCB (data, status, pagination) {
+        function placesSearchCB(data, status, pagination) {
             if (status === kakao.maps.services.Status.OK) {
 
                 // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
                 // LatLngBounds 객체에 좌표를 추가합니다
-                var bounds = new kakao.maps.LatLngBounds();
+                let bounds = new kakao.maps.LatLngBounds();
 
-                for (var i=0; i<data.length; i++) {
+                for (var i = 0; i < data.length; i++) {
                     displayMarker(data[i]);
                     bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
                 }
@@ -370,62 +384,18 @@
         function displayMarker(place) {
 
             // 마커를 생성하고 지도에 표시합니다
-            var marker = new kakao.maps.Marker({
+            let marker = new kakao.maps.Marker({
                 map: map,
                 position: new kakao.maps.LatLng(place.y, place.x)
             });
 
             // 마커에 클릭이벤트를 등록합니다
-            kakao.maps.event.addListener(marker, 'click', function() {
+            kakao.maps.event.addListener(marker, 'click', function () {
                 // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                infowindow.setContent('<div style="padding:5px; font-size:12px; text-align: center; font-weight: bold">' + place.place_name + '</div>');
                 infowindow.open(map, marker);
             });
         }
-        //
-        // // 37.45577395827255, 127.0711253661524
-        // var mapOptions = {
-        //     // center: new naver.maps.LatLng(37.3595704, 127.105399),
-        //     center: new naver.maps.LatLng(37.4557739582, 127.071125),
-        //     zoom: 15,
-        //     zoomControl: true,
-        //     zoomControlOptions: {
-        //         style: naver.maps.ZoomControlStyle.SMALL,
-        //         position: naver.maps.Position.TOP_RIGHT,
-        //     },
-        // };
-        //
-        // var map = new naver.maps.Map('map', mapOptions);
-        // var marker = new naver.maps.Marker({
-        //     position: new naver.maps.LatLng(37.4557739582, 127.071125),
-        //     map: map,
-        // });
-        //
-        // var contentString = [
-        //     '<div class="iw_inner">',
-        //     '   <p class="text-sm" style="font-family: GmarketSansLight">용산가족공원<br/>',
-        //     '   </p>',
-        //     '</div>',
-        // ].join('');
-        //
-        // var infowindow = new naver.maps.InfoWindow({
-        //     content: contentString,
-        //     maxWidth: 150,
-        //     backgroundColor: '#fff',
-        //     borderWidth: 1,
-        //     anchorSize: new naver.maps.Size(30, 30),
-        //     anchorSkew: true,
-        //     anchorColor: '#eee',
-        //     pixelOffset: new naver.maps.Point(20, -20),
-        // });
-        //
-        // naver.maps.Event.addListener(marker, 'click', function (e) {
-        //     if (infowindow.getMap()) {
-        //         infowindow.close();
-        //     } else {
-        //         infowindow.open(map, marker);
-        //     }
-        // });
 
         new ClipboardJS('.btn');
     });
