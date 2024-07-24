@@ -272,7 +272,7 @@
         <div class="px-8 mt-8 text-left tracking-tighter">
             <div class="italic underline underline-offset-2 mb-2" style="font-family: GmarketSansMedium">오시는 길</div>
             <a href="https://m.site.naver.com/1r7oV" style="font-family: GmarketSansLight" target="_blank">서울 용산구 용산동6가 93-6
-                <span style="font-family: GmarketSansMedium">용산가족공원 야외예식장</span></a>는
+                <span style="font-family: GmarketSansMedium">용산가족공원 야외예식장</span></a>
 
             <div id="map" style="width:100%; height:300px;"></div>
 <!--            <div class="my-4" id="map" style="width: 100%; height: 300px"></div>-->
@@ -285,7 +285,7 @@
                     <a href="kakaomap://search?q=용산가족공원 야외예식장" style="width: 40px">
                         <img src="./images/kakaomap.png">
                     </a>
-                    <a href="tmap://search?name=용산가족공원 야외예식장" style="width: 40px">
+                    <a href="tmap://search?name=국립중앙박물관 주차장" style="width: 40px">
                         <img src="./images/tmap.png">
                     </a>
                     <a href="https://t.kakao.com/launch?type=taxi&amp;dest_lat=37.4557739582&amp;dest_lng=127.071125&amp;ref=localweb"
@@ -342,10 +342,46 @@
             level: 3 //지도의 레벨(확대, 축소 정도)
         };
 
+        var infowindow = new kakao.maps.InfoWindow({zIndex:1});
         var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
         var places = new kakao.maps.services.Places();
         places.setMap(map);
-        places.keywordSearch('용산가족공원 야외예식장');
+        places.keywordSearch('용산가족공원 야외예식장', placesSearchCB);
+
+        // 키워드 검색 완료 시 호출되는 콜백함수 입니다
+        function placesSearchCB (data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                // LatLngBounds 객체에 좌표를 추가합니다
+                var bounds = new kakao.maps.LatLngBounds();
+
+                for (var i=0; i<data.length; i++) {
+                    displayMarker(data[i]);
+                    bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
+                }
+
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+                map.setBounds(bounds);
+            }
+        }
+
+// 지도에 마커를 표시하는 함수입니다
+        function displayMarker(place) {
+
+            // 마커를 생성하고 지도에 표시합니다
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: new kakao.maps.LatLng(place.y, place.x)
+            });
+
+            // 마커에 클릭이벤트를 등록합니다
+            kakao.maps.event.addListener(marker, 'click', function() {
+                // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+                infowindow.setContent('<div style="padding:5px;font-size:12px;">' + place.place_name + '</div>');
+                infowindow.open(map, marker);
+            });
+        }
         //
         // // 37.45577395827255, 127.0711253661524
         // var mapOptions = {
