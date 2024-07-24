@@ -24,6 +24,16 @@
     <script>
         Kakao.init('b439285fe3079252be5db38521b9331b'); // 사용하려는 앱의 JavaScript 키 입력
     </script>
+    <script>
+        function startNavigation() {
+            Kakao.Navi.start({
+                name: '용산가족공원 야외예식장',
+                x: 126.9804702,
+                y: 37.5238506,
+                coordType: 'wgs84',
+            });
+        }
+    </script>
     <style>
         @font-face {
             font-family: 'GmarketSansLight';
@@ -282,8 +292,6 @@
                 <span style="font-family: GmarketSansMedium">용산가족공원 야외예식장</span></a>
 
             <div id="map" style="width:100%; height:300px;"></div>
-            <!--            <div class="my-4" id="map" style="width: 100%; height: 300px"></div>-->
-
             <div class="italic mb-6" style="font-family: GmarketSansLight;">
                 <div class="flex justify-evenly mt-2">
                     <a href="nmap://search?query=용산가족공원 야외예식장" style="width: 40px">
@@ -314,7 +322,7 @@
 
             <div class="mb-1" style="font-family: GmarketSansMedium; font-size: 13px">🚈 대중교통</div>
             <div class="mb-1" style="font-family: GmarketSansLight;">
-                4호선 이촌역 2번출구에서 <span style="font-size: 10px">국립중앙박물관 방향</span><br> 도보 10분거리
+                4호선 이촌역 2번출구에서 <span class="underline underline-offset-2">국립중앙박물관 방향</span> 도보 10분거리
             </div>
 
             <div class="mb-6 " style="font-family: GmarketSansLight;">
@@ -392,7 +400,7 @@
             // 마커에 클릭이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'click', function () {
                 // 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
-                infowindow.setContent('<div style="padding:5px; font-size:12px; text-align: center; font-weight: bold">' + place.place_name + '</div>');
+                infowindow.setContent('<div style="padding:5px; font-size:12px; margin: 0 auto; font-weight: bold">' + place.place_name + '</div>');
                 infowindow.open(map, marker);
             });
         }
