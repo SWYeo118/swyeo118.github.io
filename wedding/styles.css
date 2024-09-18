@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 0px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -22,14 +22,14 @@ body,
     font-size: 10px;
     font-weight: 400;
     text-size-adjust: none;
-    background-color: #ebe9e2;
+    background-color: white;
     -webkit-tap-highlight-color: transparent;
     font-family: "Nanum Myeongjo", serif;
 }
 
 :root {
-    --swiper-pagination-color: #315333;
-    --swiper-pagination-bullet-inactive-color: #dfd7af;
+    --swiper-pagination-color: white;
+    --swiper-pagination-bullet-inactive-color: white;
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-opacity: 1;
 }
@@ -63,7 +63,7 @@ img {
     position: relative;
     width: 100%;
     max-width: 56rem;
-    background-color: #ebe9e2;
+    background-color: white;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -83,18 +83,18 @@ img {
 }
 
 .swiper-slide {
-    width: 100%;
+    width: 332px;
     padding-bottom: 110%;
 }
 
 .swiper-slide img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 5px;
+    left: 5px;
+    width: 332px;
+    height: 500px;
     object-fit: cover;
-    border-radius: 11.7px;
+    /*border-radius: 11.7px;*/
 }
 
 .bank-account-container {
@@ -140,7 +140,7 @@ img {
     font-family: "Nanum Myeongjo", serif;
     font-size: 2rem;
     font-weight: 600;
-    color: #254928;
+    color: #ff5900;
 }
 
 .close-button {
@@ -161,7 +161,7 @@ img {
     background-size: 50%;
 }
 
-dialog {
+.custom-dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -177,22 +177,22 @@ dialog {
 }
 
 @media (min-width: 600px) {
-    dialog {
+    .custom-dialog {
         padding: 11% 2rem 0 2rem;
     }
 }
 @media (min-width: 800px) {
-    dialog {
+    .custom-dialog {
         padding: 9% 2rem 0 2rem;
     }
 }
 @media (min-width: 1100px) {
-    dialog {
+    .custom-dialog {
         padding: 7% 2rem 0 2rem;
     }
 }
 
-dialog[open]::backdrop {
+.custom-dialog[open]::backdrop {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -202,7 +202,7 @@ dialog[open]::backdrop {
     font-family: "Nanum Myeongjo", serif;
     font-size: 2rem;
     font-weight: 600;
-    color: #254928;
+    color: #ff5900;
 }
 
 @media (max-width: 360px) {
@@ -240,7 +240,7 @@ dialog[open]::backdrop {
     font-weight: 600;
     line-height: 178.52%;
     letter-spacing: -0.2px;
-    color: #254928;
+    color: #ff5900;
 }
 
 .number {
@@ -248,7 +248,7 @@ dialog[open]::backdrop {
     font-family: "Nanum Myeongjo", serif;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #254928;
+    color: #ff5900;
 }
 
 .copy-button {
@@ -257,7 +257,7 @@ dialog[open]::backdrop {
     font-family: "Nanum Myeongjo", serif;
     font-weight: 600;
     font-size: 1.2rem;
-    background-color: #254928;
+    background-color: #ff5900;
     color: white;
 }
 
