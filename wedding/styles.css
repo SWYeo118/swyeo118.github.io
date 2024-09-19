@@ -23,7 +23,6 @@ body,
     object-fit: contain; /* 이미지를 화면에 맞추되 비율을 유지 */
     font-size: 10px;
     font-weight: 400;
-    overflow-x: hidden;
     text-size-adjust: none;
     background-color: white;
     -webkit-tap-highlight-color: transparent;
