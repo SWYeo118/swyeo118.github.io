@@ -29,12 +29,6 @@ body,
     font-family: "Nanum Myeongjo", serif;
 }
 
-:root {
-    --swiper-pagination-color: #ff5900;
-    --swiper-pagination-bullet-inactive-color: white;
-    --swiper-pagination-bullet-inactive-opacity: 1;
-    --swiper-pagination-bullet-opacity: 1;
-}
 
 #root {
     display: flex;
@@ -60,6 +54,48 @@ img {
     vertical-align: bottom;
 }
 
+.swiper {
+    width: 100%;
+    height: 680px;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-pagination-bullet {
+    opacity: 0.8;
+    background-color: white;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #2FCE42;
+}
+
+
 .container {
     position: relative;
     width: 100%;
@@ -68,35 +104,6 @@ img {
     overflow: hidden;
     overflow-x: hidden;
     overflow-y: scroll;
-}
-
-.swiper-title {
-    height: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3.4rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
-
-.swiper-wrapper {
-    padding-top: 7rem;
-    padding-bottom: 4rem;
-}
-
-.swiper-slide {
-    width: 332px;
-    padding-bottom: 110%;
-}
-
-.swiper-slide img {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    /*border-radius: 11.7px;*/
 }
 
 .bank-account-container {
