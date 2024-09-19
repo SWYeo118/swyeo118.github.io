@@ -40,9 +40,6 @@
             });
         }
     </script>
-
-
-
     <style>
         @font-face {
             font-family: 'GmarketSansLight';
@@ -141,6 +138,171 @@
             overflow-x: hidden;
             width: 100%;
         }
+
+
+        button {
+            -webkit-appearance: none;
+            border-radius: 0;
+            border: none;
+            outline: 0;
+            cursor: pointer;
+        }
+
+
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            background-color: white;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .bank-account-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .button-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            height: 50%;
+            padding-bottom: 2.6rem;
+        }
+
+        .button {
+            width: 70%;
+            aspect-ratio: 774 / 178;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            cursor: pointer;
+        }
+
+        .dialog-container {
+            height: 100%;
+            padding: 7% 8% 0 8%;
+        }
+
+        .dialog-title {
+            margin-bottom: 10%;
+            text-align: center;
+            font-family: "Nanum Myeongjo", serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ff5900;
+        }
+
+
+        @media (min-width: 600px) {
+            .custom-dialog {
+                padding: 11% 2rem 0 2rem;
+            }
+        }
+        @media (min-width: 800px) {
+            .custom-dialog {
+                padding: 9% 2rem 0 2rem;
+            }
+        }
+        @media (min-width: 1100px) {
+            .custom-dialog {
+                padding: 7% 2rem 0 2rem;
+            }
+        }
+
+        .custom-dialog[open]::backdrop {
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .dialog-title {
+            margin-bottom: 10%;
+            text-align: center;
+            font-family: "Nanum Myeongjo", serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #ff5900;
+        }
+
+        @media (max-width: 360px) {
+            .dialog-title {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 320px) {
+            .dialog-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        .dialog-content-container {
+            height: 78%;
+        }
+
+        .bank-detail-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .copy-button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding-left: 1rem;
+        }
+
+        .info1 {
+            margin-bottom: 0.5rem;
+            font-family: "Nanum Myeongjo", serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 178.52%;
+            letter-spacing: -0.2px;
+            color: #ff5900;
+        }
+
+        .number {
+            height: 100%;
+            font-family: "Nanum Myeongjo", serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #ff5900;
+        }
+
+        .copy-button {
+            height: 4rem;
+            padding: 0.4rem 1.8rem;
+            font-family: "Nanum Myeongjo", serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background-color: #ff5900;
+            color: white;
+        }
+
+        .copy-notification {
+            padding-top: 0.4rem;
+            margin-bottom: 0.4rem;
+            text-align: end;
+            height: 2rem;
+            color: #00aaff;
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: "Courier New", Courier, monospace;
+        }
+
     </style>
 </head>
 <div class="flex justify-center text-center bg-gray-100">
