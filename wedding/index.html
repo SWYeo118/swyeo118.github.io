@@ -41,6 +41,8 @@
         }
     </script>
     <style>
+
+
         @font-face {
             font-family: 'GmarketSansLight';
             font-weight: 300;
@@ -204,6 +206,39 @@
             color: #ff5900;
         }
 
+
+        .close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 7.6%;
+            aspect-ratio: 1 / 1;
+            background-color: transparent;
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            cursor: pointer;
+
+            background-image: url("./images/close_button.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50%;
+        }
+
+        .custom-dialog {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 40rem;
+            aspect-ratio: 1086 / 1404;
+            padding: 12% 2rem 0 2rem;
+            border: none;
+            background-image: url("./images/dialog_background.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
         @media (min-width: 600px) {
             .custom-dialog {
