@@ -2,8 +2,7 @@
 <html lang="">
 <head>
     <meta charset="UTF-8">
-    <meta content="yes" name="apple-mobile-web-app-capable"/>
-<!--    <meta content="yes" name="mobile-web-app-capable">-->
+    <meta content="yes" name="mobile-web-app-capable">
     <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport"/>
 
     <meta content="Yeah + Sang" property="og:title"/>
@@ -311,15 +310,6 @@
             color: #ff5900;
         }
 
-        .info2 {
-            margin-bottom: 0.4rem;
-            font-family: "PretendardCustom";
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 178.52%;
-            letter-spacing: -0.2px;
-            color: #ff5900;
-        }
 
         .number {
             height: 100%;
@@ -441,6 +431,7 @@
                         </div>
                         <p class="copy-notification" data-account="3333-03-2872947"></p>
                     </div>
+                    <button class="copy-button"> test </button>
                     <div class="flex-container">
                         <div class="bank-detail-container">
                             <span class="info1">오이자</span>
@@ -496,6 +487,15 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
+        const copyButtons = document.querySelectorAll(".copy-button");
+        copyButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                const accountNumber = event.target.getAttribute("data-account");
+                const notifElement = event.target.parentElement.parentElement.querySelector(".copy-notification");
+                copyToClipboard(accountNumber, notifElement);
+            });
+        });
+
         var swiper = new Swiper('.mySwiper', {
             spaceBetween: 0,
             grabCursor: true,
@@ -530,18 +530,6 @@
                 console.log("클립보드 API를 지원하지 않는 브라우저입니다.");
             }
         };
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const copyButtons = document.querySelectorAll(".copy-button");
-            console.log("버튼눌렀니?");
-            copyButtons.forEach((button) => {
-                button.addEventListener("click", (event) => {
-                    const accountNumber = event.target.getAttribute("data-account");
-                    const notifElement = event.target.parentElement.parentElement.querySelector(".copy-notification");
-                    copyToClipboard(accountNumber, notifElement);
-                });
-            });
-        });
 
         function startNavigation() {
             Kakao.Navi.start({
