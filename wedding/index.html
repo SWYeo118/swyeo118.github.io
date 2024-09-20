@@ -470,9 +470,7 @@
         };
 
         window.openDialog = openDialog;
-
         let isCopied = false;
-
         const copyToClipboard = (text, notifElement) => {
             if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
                 navigator.clipboard.writeText(text).then(() => {
