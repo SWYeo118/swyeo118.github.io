@@ -235,6 +235,7 @@ dialog[open]::backdrop {
 }
 
 .info1 {
+  padding-left: 1rem;
   margin-bottom: 0.5rem;
   font-family: "Pretendard Variable";
   font-size: 1.2rem;
