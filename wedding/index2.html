@@ -25,7 +25,6 @@
   <script>
     Kakao.init('b439285fe3079252be5db38521b9331b'); // 사용하려는 앱의 JavaScript 키 입력
   </script>
-
 </head>
 <body>
 <div class="container">
@@ -43,7 +42,7 @@
         <div class="swiper-slide" ><img class="base-img" src="./images/slide8.png" /></div>
         <div class="swiper-slide" ><img class="base-img" src="./images/slide9.png" /></div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination" style="bottom: 55px"></div>
     </div>
     <img src="./images/03.png" class="base-img" alt="Image 04" />
     <div class="mt-8 text-left tracking-tighter">
@@ -65,23 +64,25 @@
       </div>
     </div>
     <div style="margin-top: 2rem">
-    <img src="./images/06.png" class="base-img" alt="Image 02" />
-    </div>
-    <img src="./images/07.png" class="base-img" alt="Image 02" />
-    <div class="bank-account-container">
-      <div class="button-container">
-        <button
-                class="button"
-                style="background-image: url('./images/button_01.png')"
-                onclick="openDialog('dialog1')"
-        ></button>
-        <button
-                class="button"
-                style="background-image: url('./images/button_02.png')"
-                onclick="openDialog('dialog2')"
-        ></button>
+      <img src="./images/06.png" class="base-img" style="margin-bottom: 23%" alt="Image 02" />
+      <div class="bank-account-container">
+        <div class="button-container">
+          <button
+                  class="button"
+                  style="background-image: url('./images/button_01.png')"
+                  onclick="openDialog('dialog1')"
+          ></button>
+          <button
+                  class="button"
+                  style="background-image: url('./images/button_02.png')"
+                  onclick="openDialog('dialog2')"
+          ></button>
+        </div>
       </div>
+      <img src="./images/07.png" class="base-img" alt="Image 02" />
     </div>
+
+
     <dialog id="dialog1" class="custom-dialog">
       <button class="close-button" onclick="document.getElementById('dialog1').close()"></button>
       <p class="dialog-title">신랑측 계좌번호</p>
@@ -154,7 +155,7 @@
 
     const swiper = new Swiper(".swiper", {
       spaceBetween: 20,
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       centeredSlides: true,
       loop: true,
       pagination: {
