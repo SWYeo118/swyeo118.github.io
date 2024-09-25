@@ -277,5 +277,5 @@ dialog[open]::backdrop {
 .navi-box {
   display: flex;                  /* Flexbox 활성화 */
   justify-content: space-evenly;   /* 자식 요소들을 균등하게 배치 */
-  margin-top: 0.5rem;              /* 위쪽에 0.5rem(8px) 마진 추가 */
+  margin-top: 1rem;              /* 위쪽에 1rem(16px) 마진 추가 */
 }
