@@ -26,15 +26,11 @@
     Kakao.init('b439285fe3079252be5db38521b9331b'); // 사용하려는 앱의 JavaScript 키 입력
   </script>
 
-<!--  <title>지원과 두현의 결혼식에 초대합니다</title>-->
 </head>
 <body>
 <div class="container">
   <img src="./images/01.png" class="base-img" alt="Image 01" />
-  <div
-          class="swiper-title"
-
-  >
+  <div class="swiper-title">
     <div class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide" ><img class="base-img" src="./images/slide1.png" /></div>
@@ -51,24 +47,24 @@
     </div>
     <img src="./images/03.png" class="base-img" alt="Image 04" />
     <div class="mt-8 text-left tracking-tighter">
-      <div id="map" class="my-4" style="width: 380px; height: 380px"></div>
+      <div id="map" class="my-4" style="width: 380px; height: 100%"></div>
       <div class="italic mb-6" style="font-family: 'Pretendard Variable';">
-        <div class="flex justify-evenly mt-2">
-          <a href="nmap://search?query=용산가족공원 야외예식장" style="width: 40px">
-            <img src="./images/navermap.png">
+        <div class="navi-box">
+          <a href="nmap://search?query=용산가족공원 야외예식장" style="width: 40px; display: block">
+            <img src="./images/navermap.png" style="max-width: 100%; height: auto;">
           </a>
-          <a href="kakaomap://search?q=용산가족공원 야외예식장" style="width: 40px">
-            <img src="./images/kakaomap.png">
+          <a href="kakaomap://search?q=용산가족공원 야외예식장" style="width: 40px; display: block">
+            <img src="./images/kakaomap.png" style="max-width: 100%; height: auto;">
           </a>
-          <a href="tmap://search?name=국립중앙박물관 주차장" style="width: 40px">
-            <img src="./images/tmap.png">
+          <a href="tmap://search?name=국립중앙박물관 주차장" style="width: 40px; display: block">
+            <img src="./images/tmap.png" style="max-width: 100%; height: auto;">
           </a>
-          <a id="start-navigation" href="javascript:startNavigation()" style="width: 40px">
-            <img src="./images/kakaonavi.png">
+          <a id="start-navigation" href="javascript:startNavigation()" style="width: 40px; display: block">
+            <img src="./images/kakaonavi.png" style="max-width: 100%; height: auto;">
           </a>
-        </div>
       </div>
     </div>
+
     <img src="./images/06.png" class="base-img" alt="Image 02" />
     <img src="./images/07.png" class="base-img" alt="Image 02" />
     <div class="bank-account-container">
@@ -147,6 +143,7 @@
         </div>
       </div>
     </dialog>
+    </div>
   </div>
 </div>
 

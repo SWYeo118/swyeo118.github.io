@@ -272,3 +272,9 @@ dialog[open]::backdrop {
   font-weight: 400;
   font-family: "Courier New", Courier, monospace;
 }
+
+.navi-box {
+  display: flex;                  /* Flexbox 활성화 */
+  justify-content: space-evenly;   /* 자식 요소들을 균등하게 배치 */
+  margin-top: 0.5rem;              /* 위쪽에 0.5rem(8px) 마진 추가 */
+}
