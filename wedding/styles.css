@@ -68,6 +68,12 @@ button {
   overflow-y: scroll;
 }
 
+.swiper {
+  position: relative;
+  width: 100%;
+  /*height: 100%;*/
+}
+
 .swiper-title {
   height: 3rem;
   margin-top: 3rem;
@@ -78,24 +84,38 @@ button {
 }
 
 .swiper-wrapper {
-  /*padding-top: 7rem;*/
-  /*padding-bottom: 4rem;*/
-}
-
-.swiper-slide {
   width: 100%;
-  padding-bottom: 840px;
 }
 
 .swiper-slide img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /*border-radius: 11.7px;*/
+  object-fit: contain;
 }
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  will-change: transform;
+  transform: translateZ(0);  /* GPU 가속을 트리거 */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+
 
 .bank-account-container {
   position: relative;
@@ -114,7 +134,6 @@ button {
   gap: 1rem;
   width: 100%;
   height: 50%;
-  /*padding-bottom: 2.6rem;*/
 }
 
 .button {
@@ -170,7 +189,6 @@ dialog {
   aspect-ratio: 1086 / 1404;
   padding: 12% 2rem 0 2rem;
   border: none;
-  /*background-image: url("./images/dialog_background.png");*/
   background-color: white;
   background-size: cover;
   background-position: center;
